@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<%= csrf_meta_tags %>
+	<%= display_meta_tags %>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+	<script src="https://use.fontawesome.com/7dee056668.js"></script>
+</head>
+
+
+<body>
+<% if alert %>
+	<p class="alert"><%= alert %></p>
+<% elsif notice %>
+	<p class="notice"><%= notice %></p>
+<% end %>
+
+<div id="banner">
+	<%= image_tag "banner.svg" %>
+</div>
+
+	<header>
+		<div id= "navigator" class="cd-logo">
+			<ul>
+				<li><a href="https://www.instagram.com/themikebonza/"><%= image_tag ("instagram.svg")%></a></li>
+				<li><a href="https://www.facebook.com/mike.bonza.3"><%= image_tag ("facebook.svg")%></a></li>
+				<li><a href="https://twitter.com/bonza_mike"><%= image_tag ("twitter.svg")%></a></li>	
+				<li><a href="https://www.youtube.com/channel/UCNUQ3Q8NTFS1V7osWrS-p0w"><%= image_tag ("youtube.svg")%></a></li>	
+			</ul>
+		</div>
+	</header>
+
+	<nav>
+		<ul class="cd-primary-nav">
+			<li><a href="#0">Noticias</a></li>
+			<li><a href="#0">Tour</a></li>
+			<li><a href="#0">Fanzone</a></li>
+			<li><a href="#0">Biografía</a></li>
+			<li><a href="#0">Videos</a></li>
+			<li><a href="#0">Música</a></li>
+			<li><a href="#0">Contrataciones</a></li>
+		</ul>
+	</nav>
+
+
+	<main class="cd-content">
+<br><br>
+<%=link_to root_path do %>
+<div class="center"><%= image_tag "mike_bonza_logo.svg" %></div>
+<% end %>
+<br><br>
+		<!-- your content here -->
+<div id="content">
+	<%= yield %>
+</div>
+	</main> <!-- cd-content -->
+
+	<div class="cd-overlay-nav">
+		<span></span>
+	</div> <!-- cd-overlay-nav -->
+
+	<div class="cd-overlay-content">
+		<span></span>
+	</div> <!-- cd-overlay-content -->
+
+	<a href="#0" class="cd-nav-trigger">Menu<span class="cd-icon"></span></a>
+</body>
+</html>
