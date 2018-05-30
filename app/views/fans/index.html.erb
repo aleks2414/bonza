@@ -1,0 +1,46 @@
+<%= render 'welcome/bread' %>
+
+<div class="container">
+<div id="formario">
+
+<h1>Fan Zone</h1>
+<br>
+
+<div class="content table-responsive table-full-width">
+      <table class="table table-hover table-striped">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Link</th>
+      <th>Foto4</th>
+      <th>Foto5</th>
+      <th>Foto6</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fans.each do |fan| %>
+      <tr>
+        <td><%= fan.user %></td>
+        <td><%= fan.title %></td>
+        <td><%= fan.content %></td>
+        <td><%= fan.link %></td>
+        <td><%= fan.foto4 %></td>
+        <td><%= fan.foto5 %></td>
+        <td><%= fan.foto6 %></td>
+        <td><%= link_to 'Show', fan %></td>
+        <td><%= link_to 'Edit', edit_fan_path(fan) %></td>
+        <td><%= link_to 'Destroy', fan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<br>
+
+</div>
+</div>

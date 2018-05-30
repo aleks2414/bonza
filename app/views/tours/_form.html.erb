@@ -1,0 +1,63 @@
+<%= form_with(model: tour, local: true) do |form| %>
+  <% if tour.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tour.errors.count, "error") %> prohibited this tour from being saved:</h2>
+
+      <ul>
+      <% tour.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :tour_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content, id: :tour_content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lugar %>
+    <%= form.text_field :lugar, id: :tour_lugar %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fecha %>
+    <%= form.text_field :fecha, id: :tour_fecha %>
+  </div>
+
+  <div class="field">
+    <%= form.label :foto7 %>
+    <%= form.text_field :foto7, id: :tour_foto7 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :foto8 %>
+    <%= form.text_field :foto8, id: :tour_foto8 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :foto9 %>
+    <%= form.text_field :foto9, id: :tour_foto9 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :link %>
+    <%= form.text_field :link, id: :tour_link %>
+  </div>
+
+  <div class="field">
+    <%= form.label :video %>
+    <%= form.text_field :video, id: :tour_video %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "button button_primary" %>
+  </div>
+<% end %>

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @news.user %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @news.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @news.content %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @news.link %>
+</p>
+
+<p>
+  <strong>Foto1:</strong>
+  <%= @news.foto1 %>
+</p>
+
+<p>
+  <strong>Foto2:</strong>
+  <%= @news.foto2 %>
+</p>
+
+<p>
+  <strong>Foto3:</strong>
+  <%= @news.foto3 %>
+</p>
+
+<%= link_to 'Edit', edit_news_path(@news) %> |
+<%= link_to 'Back', news_index_path %>

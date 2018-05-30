@@ -1,0 +1,24 @@
+<%= form_with(model: music, local: true) do |form| %>
+  <% if music.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(music.errors.count, "error") %> prohibited this music from being saved:</h2>
+
+      <ul>
+      <% music.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+  <div class="field">
+    <%= form.label :link %>
+    <%= form.text_field :link, id: :music_link %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "button button_primary" %>
+  </div>
+<% end %>

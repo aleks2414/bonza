@@ -1,0 +1,52 @@
+<%= render 'welcome/bread' %>
+
+<div class="container">
+<div id="formario">
+
+<h1>Tours</h1>
+<br>
+<div class="content table-responsive table-full-width">
+      <table class="table table-hover table-striped">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Lugar</th>
+      <th>Fecha</th>
+      <th>Foto7</th>
+      <th>Foto8</th>
+      <th>Foto9</th>
+      <th>Link</th>
+      <th>Video</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tours.each do |tour| %>
+      <tr>
+        <td><%= tour.user %></td>
+        <td><%= tour.title %></td>
+        <td><%= tour.content %></td>
+        <td><%= tour.lugar %></td>
+        <td><%= tour.fecha %></td>
+        <td><%= tour.foto7 %></td>
+        <td><%= tour.foto8 %></td>
+        <td><%= tour.foto9 %></td>
+        <td><%= tour.link %></td>
+        <td><%= tour.video %></td>
+        <td><%= link_to 'Show', tour %></td>
+        <td><%= link_to 'Edit', edit_tour_path(tour) %></td>
+        <td><%= link_to 'Destroy', tour, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<br>
+
+
+</div>
+</div>

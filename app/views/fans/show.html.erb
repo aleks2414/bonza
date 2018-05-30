@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @fan.user %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @fan.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @fan.content %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @fan.link %>
+</p>
+
+<p>
+  <strong>Foto4:</strong>
+  <%= @fan.foto4 %>
+</p>
+
+<p>
+  <strong>Foto5:</strong>
+  <%= @fan.foto5 %>
+</p>
+
+<p>
+  <strong>Foto6:</strong>
+  <%= @fan.foto6 %>
+</p>
+
+<%= link_to 'Edit', edit_fan_path(@fan) %> |
+<%= link_to 'Back', fans_path %>

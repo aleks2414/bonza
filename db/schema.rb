@@ -10,10 +10,72 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180402150809) do
+ActiveRecord::Schema.define(version: 20180530160053) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "fans", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "title"
+    t.text "content"
+    t.string "link"
+    t.string "foto4"
+    t.string "foto5"
+    t.string "foto6"
+    t.boolean "disponible", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_fans_on_user_id"
+  end
+
+  create_table "galleries", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "photo10"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_galleries_on_user_id"
+  end
+
+  create_table "musics", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "link"
+    t.boolean "disponible", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_musics_on_user_id"
+  end
+
+  create_table "news", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "title"
+    t.text "content"
+    t.string "link"
+    t.string "foto1"
+    t.string "foto2"
+    t.string "foto3"
+    t.boolean "disponible", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_news_on_user_id"
+  end
+
+  create_table "tours", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "title"
+    t.text "content"
+    t.string "lugar"
+    t.string "fecha"
+    t.string "foto7"
+    t.string "foto8"
+    t.string "foto9"
+    t.string "link"
+    t.string "video"
+    t.boolean "disponible", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_tours_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -32,4 +94,19 @@ ActiveRecord::Schema.define(version: 20180402150809) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "videos", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "link"
+    t.boolean "disponible", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_videos_on_user_id"
+  end
+
+  add_foreign_key "fans", "users"
+  add_foreign_key "galleries", "users"
+  add_foreign_key "musics", "users"
+  add_foreign_key "news", "users"
+  add_foreign_key "tours", "users"
+  add_foreign_key "videos", "users"
 end
