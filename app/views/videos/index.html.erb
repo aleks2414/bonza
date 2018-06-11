@@ -9,7 +9,7 @@
       <table class="table table-hover table-striped">
   <thead>
     <tr>
-      <th>User</th>
+      <th>disponible</th>
       <th>Link</th>
       <th colspan="3"></th>
     </tr>
@@ -18,11 +18,11 @@
   <tbody>
     <% @videos.each do |video| %>
       <tr>
-        <td><%= video.user %></td>
+        <td><%= video.disponible %></td>
         <td><%= video.link %></td>
-        <td><%= link_to 'Show', video %></td>
-        <td><%= link_to 'Edit', edit_video_path(video) %></td>
-        <td><%= link_to 'Destroy', video, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver más', video %></td>
+        <td><%= link_to 'Editar', edit_video_path(video) %></td>
+        <td><%= link_to 'Eliminar', video, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

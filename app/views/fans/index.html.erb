@@ -10,7 +10,7 @@
       <table class="table table-hover table-striped">
   <thead>
     <tr>
-      <th>User</th>
+      <th>Disponible</th>
       <th>Title</th>
       <th>Content</th>
       <th>Link</th>
@@ -24,16 +24,16 @@
   <tbody>
     <% @fans.each do |fan| %>
       <tr>
-        <td><%= fan.user %></td>
+        <td><%= fan.disponible %></td>
         <td><%= fan.title %></td>
         <td><%= fan.content %></td>
         <td><%= fan.link %></td>
         <td><%= fan.foto4 %></td>
         <td><%= fan.foto5 %></td>
         <td><%= fan.foto6 %></td>
-        <td><%= link_to 'Show', fan %></td>
-        <td><%= link_to 'Edit', edit_fan_path(fan) %></td>
-        <td><%= link_to 'Destroy', fan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver más', fan %></td>
+        <td><%= link_to 'Editar', edit_fan_path(fan) %></td>
+        <td><%= link_to 'Eliminar', fan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

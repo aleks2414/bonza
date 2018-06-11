@@ -30,7 +30,7 @@ class FansController < ApplicationController
 
     respond_to do |format|
       if @fan.save
-        format.html { redirect_to @fan, notice: 'Fan was successfully created.' }
+        format.html { redirect_to fans_path, notice: 'Fan was successfully created.' }
         format.json { render :show, status: :created, location: @fan }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class FansController < ApplicationController
   def update
     respond_to do |format|
       if @fan.update(fan_params)
-        format.html { redirect_to @fan, notice: 'Fan was successfully updated.' }
+        format.html { redirect_to fans_path, notice: 'Fan was successfully updated.' }
         format.json { render :show, status: :ok, location: @fan }
       else
         format.html { render :edit }

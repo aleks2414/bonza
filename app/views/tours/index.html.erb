@@ -9,7 +9,7 @@
       <table class="table table-hover table-striped">
   <thead>
     <tr>
-      <th>User</th>
+      <th>disponible</th>
       <th>Title</th>
       <th>Content</th>
       <th>Lugar</th>
@@ -26,7 +26,7 @@
   <tbody>
     <% @tours.each do |tour| %>
       <tr>
-        <td><%= tour.user %></td>
+        <td><%= tour.disponible %></td>
         <td><%= tour.title %></td>
         <td><%= tour.content %></td>
         <td><%= tour.lugar %></td>
@@ -36,9 +36,9 @@
         <td><%= tour.foto9 %></td>
         <td><%= tour.link %></td>
         <td><%= tour.video %></td>
-        <td><%= link_to 'Show', tour %></td>
-        <td><%= link_to 'Edit', edit_tour_path(tour) %></td>
-        <td><%= link_to 'Destroy', tour, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver más', tour %></td>
+        <td><%= link_to 'Editar', edit_tour_path(tour) %></td>
+        <td><%= link_to 'Eliminar', tour, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

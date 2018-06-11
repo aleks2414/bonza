@@ -11,8 +11,8 @@
  * It is generally better to create a new file per style scope.
  *
  * require fullcalendar
- * require owl.carousel
- * require owl.theme
+ *= require owl.carousel
+ *= require owl.theme
  *= require_tree .
  *= require_self
  */
@@ -23,10 +23,10 @@
 @import "reset";
 @import "style";
 
-@import url('https://fonts.googleapis.com/css?family=Arvo:700|Open+Sans:300');
+@import url('https://fonts.googleapis.com/css?family=Arvo:700|Open+Sans:300,800');
 @import url('https://fonts.googleapis.com/css?family=Homenaje');
 
-$primary: #657FBE;
+$primary: #FFDA0F;
 $secondary: #223A6D;
 $light_grey: #F5F5F5;
 
@@ -45,9 +45,9 @@ p {
 
 .button {
   transition: background-color .15s linear;
-  font-size: 13px;
+  font-size: 15px;
   min-width: 200px;
-  padding: 9px;
+  padding: 10px;
   display: inline-block;
   text-align: center;
   vertical-align: middle;
@@ -61,7 +61,7 @@ p {
 .button_primary {
   color: white;
   background-color: $primary;
-  font-size: 14px;
+  font-size: 16px;
   border-color: $primary;
   text-transform: uppercase;
   &:hover {
@@ -276,8 +276,73 @@ select {
   margin-top: -50px;
 }
 
+hr {
+  border-color: #555;
+  border-width: 2.5px;
+  max-width: 250px;
+  border-color: #657FBE;
+}
 
+#section {
+  h1 {
+    font-size: 2.5em;
+    text-transform: uppercase;
+  }
+}
 
+#noticia {
+  background-color: white;
+  padding: 5%;
+  margin: 30px 0;
+  height: 400px;
+
+  h2 {
+    margin-top: 10px;
+    font-size: 1.5em;
+  }
+  p {
+    font-size: 1em;
+  }
+  .image {
+  height:150px;
+  line-height: 150px;
+  overflow:hidden;
+  text-align:center;
+  width:100%;
+  img {
+    width: 100%;
+  }
+  }
+
+}
+
+#fanzone {
+  background-color: white;
+  border: solid 1px black;
+  padding: 5%;
+  margin: 20px 0;
+}
+
+.modal {
+  img {
+    width: 100%;
+  }
+}
+
+p {
+  z-index: 10;
+  position: relative;
+}
+
+.shadow {
+  color: rgba(255, 218, 15, .5) !important;
+  font-weight: 800;
+  font-size: 100px !important;
+  font-family: 'Open Sans', sans-serif !important;
+  position: absolute;
+  z-index: 0 !important;
+  margin-top: -30px;
+}
 
 /*Media*/
 

@@ -1,1 +1,65 @@
-noticias.html.erb
+<div id="section">
+	<div class="container">
+		<h1>Noticas</h1>
+		<hr>
+
+		
+			<% @news.each_with_index do |news, i| %>
+				<div class="col-md-4">
+			<%= link_to "#", data: {toggle: "modal", target: "#modal#{i}"} do %>
+			<div id="noticia">
+				<div class="image">
+					<%= image_tag news.foto1 %>
+				</div>
+				<h2><%=news.title %></h2>
+				<br><br>
+				<h4><%=news.created_at.to_date %></h4>
+				<p><%= news.content.truncate(150)%></p>
+			</div>
+			<% end %>
+
+			<div id="modli">
+				<!-- Modal -->
+				<div class="modal fade" id="modal<%=i%>" role="dialog">
+					<div class="modal-dialog modal-md">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+							</div>
+							<div class="modal-body">
+								<h1 class="izquierdo"><%= news.title %></h1><br>
+								<h2><%=news.created_at.to_date %></h2>
+								<br>
+								<div id="boby">
+									<!-- body -->
+									<div class="owl-carousel">
+										<div><%= image_tag news.foto1 if news.foto1 %></div>
+										<div><%= image_tag news.foto2 if news.foto2 %></div>
+										<div><%= image_tag news.foto3 if news.foto3 %></div>
+									</div>
+									<br>
+									<h4 class="shadow"><%=news.content.first %></h4>
+									<p><%=news.content %></p>
+									<br>
+									<a class= "button button_primary" href="<%= news.link %>">Más información</a>
+									<br>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--  -->
+				</div>
+			<% end %>
+	</div>
+</div>
+
+
+<script>
+    $(".owl-carousel").owlCarousel(
+  {
+    items:1,
+    autoHeight:true,
+  });
+</script>

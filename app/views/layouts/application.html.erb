@@ -41,6 +41,16 @@
 			<li><a href="<%= bonza_videos_path %>">Videos</a></li>
 			<li><a href="<%= musica_path %>">Música</a></li>
 			<li><a href="<%= root_path %>">Contrataciones</a></li>
+
+						<% if user_signed_in? %>
+
+						<li><a href="<%=new_news_path %>">Tablero</a></li>
+						<li class="mini"> <a href="<%= destroy_user_session_path %>" data-method='delete'>
+							Cerrar Sesión
+						</a></li>
+						<% else %>
+						<li class="mini"><a href="<%= new_user_session_path %>"> Iniciar Sesión </a></li>
+						<% end %>
 		</ul>
 	</nav>
 

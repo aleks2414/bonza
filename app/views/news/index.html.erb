@@ -11,7 +11,7 @@
       <table class="table table-hover table-striped">
   <thead>
     <tr>
-      <th>User</th>
+      <th>disponible</th>
       <th>Title</th>
       <th>Content</th>
       <th>Link</th>
@@ -25,16 +25,16 @@
   <tbody>
     <% @news.each do |news| %>
       <tr>
-        <td><%= news.user %></td>
+        <td><%= news.disponible %></td>
         <td><%= news.title %></td>
         <td><%= news.content %></td>
         <td><%= news.link %></td>
         <td><%= news.foto1 %></td>
         <td><%= news.foto2 %></td>
         <td><%= news.foto3 %></td>
-        <td><%= link_to 'Show', news %></td>
-        <td><%= link_to 'Edit', edit_news_path(news) %></td>
-        <td><%= link_to 'Destroy', news, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver más', news %></td>
+        <td><%= link_to 'Editar', edit_news_path(news) %></td>
+        <td><%= link_to 'Eliminar', news, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

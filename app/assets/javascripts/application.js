@@ -22,5 +22,5 @@
 // require bootstrap
 // require ckeditor/init
 // require cocoon
-// require owl.carousel
+//= require owl.carousel
 //= require_tree .
