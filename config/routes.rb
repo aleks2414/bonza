@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get '/bonza_videos' => 'welcome#videos'
   get '/musica' => 'welcome#musica'
   get '/bonza_tour' => 'welcome#tour'
+  get '/galeria' => 'welcome#galeria'
 
   resources :contacts, only: [:new, :create]
 

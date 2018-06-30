@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :disponible %>
+    <%= form.check_box :disponible, id: :experience_disponible %>
+  </div>
+
+  <div class="field">
     <%= form.label :link %>
     <%= form.text_field :link, id: :video_link %>
   </div>

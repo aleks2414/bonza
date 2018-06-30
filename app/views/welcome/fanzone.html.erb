@@ -4,7 +4,7 @@
 		<hr>
 
 	<% @fans.each_with_index do |fan, i| %>
-		<div class="col-md-8 col-md-offset-2">
+		<div class="col-md-6">
 			<%= link_to "#", data: {toggle: "modal", target: "#modal#{i}"} do %>
 			<div id="fanzone">
 				<ul>
@@ -12,7 +12,7 @@
 						<h2><%= fan.title %></h2>
 					</li>
 					<li>
-						<p><%= fan.content.truncate(50)%></p>
+						<p><%= fan.content.truncate(100)%></p>
 					</li>
 				</ul>
 			</div>
@@ -33,6 +33,7 @@
 								<div id="boby">
 									<!-- body -->
 									<br>
+									<h4 class="shadow"><%=fan.content.first %></h4>
 									<p><%=fan.content %></p> <br>
 									<div class="owl-carousel">
 										<div><%= image_tag fan.foto4 if fan.foto4 %></div>

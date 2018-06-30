@@ -14,6 +14,7 @@
 //= require jquery-ui
 //=  require jquery_ujs
 //= require bootstrap-sprockets
+//= require photoswipe
 // require moment
 // require fullcalendar
 // require underscore

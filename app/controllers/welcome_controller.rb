@@ -25,4 +25,9 @@ class WelcomeController < ApplicationController
   def tour
   	@tours = Tour.all.order('id DESC')
   end
+
+
+  def galeria
+    @galleries = Gallery.all.order('id DESC')
+  end
 end

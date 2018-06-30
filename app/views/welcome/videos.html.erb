@@ -1,1 +1,16 @@
-videos.html.erb
+<div id="section">
+	<div class="container">
+		<h1>Videos</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi voluptates iusto est earum nostrum animi minima, sapiente provident temporibus consequatur dignissimos dolores assumenda, quas veritatis magni doloremque laboriosam corporis id!</p>
+		<hr>
+
+		
+			<% @videos.each_with_index do |video, i| %>
+				<div class="col-md-6 col-sm-6">
+			<div id="cancion">
+				<%= simple_format(video.link, {}, sanitize: false) %>
+			</div>
+				</div>
+			<% end %>
+	</div>
+</div>

@@ -1,6 +1,7 @@
 class ContactsController < ApplicationController
   def new
 		@contact = Contact.new
+    @galleries = Gallery.all.order('id ASC')
   end
 
   def create

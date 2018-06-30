@@ -1,1 +1,16 @@
-musica.html.erb
+<div id="section">
+	<div class="container">
+		<h1>Música</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non aliquam magni dignissimos iure fuga molestiae perferendis magnam, quo alias, officia voluptate, eligendi pariatur assumenda error earum iusto veritatis. Illo, quidem!</p>
+		<hr>
+
+		
+			<% @musics.each_with_index do |music, i| %>
+				<div class="col-md-4 col-sm-6">
+			<div id="cancion">
+				<%= simple_format(music.link, {}, sanitize: false) %>
+			</div>
+				</div>
+			<% end %>
+	</div>
+</div>
