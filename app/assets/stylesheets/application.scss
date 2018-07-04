@@ -262,7 +262,7 @@ select {
 }
 
 #hex {
-  margin-top: 70px;
+  margin-top: 180px;
   text-align: center;
 }
 
@@ -290,29 +290,48 @@ select {
 
 .hexi-21 {
   margin-top: -150px;
+  background-image: image-url("galeria.png");
 
+}
+
+.hexi-1 {
+  margin-top: -150px;
+  background-image: image-url("noticias.png");
+}
+
+.hexi-3 {
+  margin-top: -10px;
+  background-image: image-url("fanzone.png");
 }
 
 .hexi-12 {
-  margin-top: -150px;
+  margin-top: -50px;
   background-image: image-url("biografia.png");
 }
 
-.hexi-6, .hexi-3 {
+.hexi-6 {
   margin-top: 70px;
 }
 
 .hexi-60 {
   margin-top: 170px;
+  background-image: image-url("tour.png");
 }
 
 .hexi-2 {
   margin-top: 50px;
+  background-image: image-url("videos.png");
 }
 
 
 .hexi-31 {
   margin-top: -50px;
+  background-image: image-url("musica.png");
+}
+
+.hexi-30 {
+  margin-top: -50px;
+  background-image: image-url("contrataciones.png");
 }
 
 hr {
