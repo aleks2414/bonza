@@ -7,17 +7,16 @@
 		<div class="col-md-10 col-md-offset-1">
 			<%= link_to "#", data: {toggle: "modal", target: "#modal#{i}"} do %>
 			<div id="fanzone">
-				<ul>
-					<li>
-						<h2><%= tour.title %></h2>
-					</li>
-					<li> <br>
+				<div class="row">
+				<div class="col-md-8">
+						<h2><%= tour.title %></h2> <br>
 						<h6><%= tour.lugar %> - <%= tour.fecha %></h6>
-					</li>
-					<li>
-						<p><%= tour.content.truncate(85)%></p>
-					</li>
-				</ul>
+						<p><%= tour.content.truncate(50)%></p>
+				</div>
+				<div class="col-md-4">
+						<a class= "button button_primary" href="<%= tour.link %>">BOLETOS</a>
+				</div>
+			</div>
 			</div>
 			<% end %>
 

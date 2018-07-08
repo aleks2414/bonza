@@ -330,7 +330,7 @@ header {
 
 .cd-content {
   /* just some dummy content */
-  padding: 80px 0;
+  padding: 80px 0 0 0;
   width: 100%;
   margin: 0 auto;
   z-index: 1;

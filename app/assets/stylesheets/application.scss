@@ -418,6 +418,17 @@ p {
   }
 }
 
+#footer {
+  background-color: black;
+  margin-top: 20px;
+  text-align: center;
+
+  h4 {
+    padding: 25px 0;
+    color: white;
+  }
+}
+
 /*Media*/
 
 @media (max-width: 900px)
