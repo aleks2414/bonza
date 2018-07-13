@@ -1,5 +1,6 @@
 class WelcomeController < ApplicationController
   def index
+    @tours = Tour.all.order('id DESC').limit(3)
   end
 
   def noticias

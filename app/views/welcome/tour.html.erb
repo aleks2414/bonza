@@ -1,9 +1,11 @@
 <div id="section">
 	<div class="container">
+		
 		<h1>Mike Bonza Tour</h1>
 		<hr>
-
+	
 	<% @tours.each_with_index do |tour, i| %>
+	<div id="touri">
 		<div class="col-md-10 col-md-offset-1">
 			<%= link_to "#", data: {toggle: "modal", target: "#modal#{i}"} do %>
 			<div id="fanzone">
@@ -14,7 +16,7 @@
 						<p><%= tour.content.truncate(50)%></p>
 				</div>
 				<div class="col-md-4">
-						<a class= "button button_primary" href="<%= tour.link %>">BOLETOS</a>
+						<a class= "button button_primary" href="<%= tour.link %>">INFORMACIÓN</a>
 				</div>
 			</div>
 			</div>
@@ -55,7 +57,9 @@
 			<!--  -->
 
 		</div>
+		</div>
 	<% end %>
+	
 	</div>
 </div>
 

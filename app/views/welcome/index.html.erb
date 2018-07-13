@@ -9,10 +9,10 @@
 		<div class="row">
 
 			
-			<%= link_to noticias_path do %>
+			<%= link_to musica_path do %>
 			<div class="col-sm-6 col-xs-6">
 				<div id="hexi" class="hexi-1">
-				<h2>Noticias</h2>
+				<h2>Música</h2>
 			</div>
 			</div>
 			<% end %>
@@ -23,10 +23,10 @@
 			</div>
 			</div>
 
-			<%= link_to fanzone_path do %>
+			<%= link_to videos_path do %>
 			<div class="col-sm-4 col-xs-6">
 				<div id="hexi" class="hexi-3">
-				<h2>Fanzone</h2>
+				<h2>Videos</h2>
 			</div>
 			</div>
 			<% end %>
@@ -44,10 +44,10 @@
 			<% end %>
 
 
-			<%= link_to musica_path do %>
+			<%= link_to galeria_path do %>
 			<div class="visible-xs col-xs-6">
 				<div id="hexi" class="hexi-31">
-				<h2>Música</h2>
+				<h2>Galería</h2>
 			</div>
 			</div>
 			<% end %>
@@ -62,65 +62,115 @@
 
 		<div class="row">
 
-			<%= link_to galeria_path do %>			
+			<%= link_to noticias_path do %>			
 			<div class="col-sm-3 col-xs-6">
 				<div id="hexi" class="hexi-21">
-				<h2>Galería</h2>
+				<h2>Noticias</h2>
 			</div>
 			</div>
 			<% end %>
-
-			<%= link_to bonza_videos_path do %>
-			<div class="col-sm-5 col-xs-6">
-				<div id="hexi" class="hexi-2">
-				<h2>Videos</h2>
-			</div>
-			</div>
-			<% end %>
-
-			<%= link_to musica_path do %>
-			<div class="col-sm-4 col-xs-6 hidden-xs">
-				<div id="hexi" class="hexi-31">
-				<h2>Música</h2>
-			</div>
-			</div>
-			<% end %>
-
-		</div>
-
-
-		<div class="row">
-
-			
-			<%= link_to bonza_tour_path do %>
-			<div class="col-sm-3 col-xs-6">
-				<div id="hexi" class="hexi-60">
-				<h2>Tour</h2>
-			</div>
-			</div>
-			<% end %>
-
-			<div class="col-sm-2 hidden-xs">
-				<div id="hexi" class="hexi-2">
-				<h3></h3>
-			</div>
-			</div>
 
 			<%= link_to new_contact_path do %>
-			<div class="col-sm-4 col-xs-6">
-				<div id="hexi" class="hexi-30">
+			<div class="col-sm-5 col-xs-6">
+				<div id="hexi" class="hexi-2">
 				<h2>Contrataciones</h2>
 			</div>
 			</div>
 			<% end %>
 
-			<div class="col-sm-2 hidden-xs">
+			<%= link_to galeria_path do %>
+			<div class="col-sm-4 col-xs-6 hidden-xs">
 				<div id="hexi" class="hexi-31">
-				<h3></h3>
+				<h2>Galería</h2>
 			</div>
 			</div>
+			<% end %>
 
 		</div>
 
+
 	</div>
 </div>
+
+<br><br><br><br>
+<div id="section">
+	<div class="container">
+		
+		<h1>Próximas presentaciones</h1>
+		<hr>
+	
+	<% @tours.each_with_index do |tour, i| %>
+		<div class="col-md-10 col-md-offset-1">
+			<%= link_to "#", data: {toggle: "modal", target: "#modal#{i}"} do %>
+			<div id="fanzone">
+				<div class="row">
+				<div class="col-md-8">
+						<h2><%= tour.title %></h2> <br>
+						<h6><%= tour.lugar %> - <%= tour.fecha %></h6>
+						<p><%= tour.content.truncate(50)%></p>
+				</div>
+				<div class="col-md-4">
+						<a class= "button button_primary" href="<%= tour.link %>">INFORMACIÓN</a>
+				</div>
+			</div>
+			</div>
+			<% end %>
+
+			<%= link_to "Todas las fechas del tour", bonza_tour_path, class: "button button_primary" %>
+
+<div id="modli">
+				<!-- Modal -->
+				<div class="modal fade" id="modal<%=i%>" role="dialog">
+					<div class="modal-dialog modal-md">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+							</div>
+							<div class="modal-body">
+								<h1 class="izquierdo"><%= tour.title %></h1>
+								<hr>
+								<h6><%= tour.lugar %> - <%= tour.fecha %></h6>
+								<br>
+								<div id="boby">
+									<!-- body -->
+									<br>
+									<h4 class="shadow"><%=tour.content.first %></h4>
+									<p><%=tour.content %></p> <br>
+									<div class="owl-carousel">
+										<div><%= image_tag tour.foto7 if tour.foto7 %></div>
+										<div><%= image_tag tour.foto8 if tour.foto8 %></div>
+										<div><%= image_tag tour.foto9 if tour.foto9 %></div>
+									</div>
+									<br>
+									<a class= "button button_primary" href="<%= tour.link %>">Más información</a>
+									<br>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--  -->
+
+		</div>
+		
+	<% end %>
+	
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+<script>
+    $(".owl-carousel").owlCarousel(
+  {
+    items:1,
+    autoHeight:true,
+  });
+</script>

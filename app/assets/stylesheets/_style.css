@@ -20,7 +20,7 @@ body {
 }
 
 a {
-  color: #FFDA0F;
+  color: #FFF;
   text-decoration: none;
 }
 
@@ -149,7 +149,7 @@ header {
   transition-delay: 0.4s;
 }
 .cd-nav-trigger::after {
-  background-color: #FFDA0F;
+  background-color: #fff;
   -webkit-transform: scale(0);
   -moz-transform: scale(0);
   -ms-transform: scale(0);
