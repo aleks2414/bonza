@@ -1,11 +1,25 @@
-<div id="section">
+<div class="hero">
 	<div class="container">
-		<h1>Música</h1>
-		<h4 class="shadow">L</h4>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non aliquam magni dignissimos iure fuga molestiae perferendis magnam, quo alias, officia voluptate, eligendi pariatur assumenda error earum iusto veritatis. Illo, quidem!</p>
-		<hr>
+	<div class="row">
+		<div class="col-md-6">
+			<div id="banner_1">
+				<h1 class="subtitle white">Mkie Bonza</h1>
+				<h2 class="title white">Música & Video</h2>
+			</div>
+		</div>
+	</div>
+	</div>
+</div>
+<div id="pinta">
+</div>
 
-		
+
+<div id="section" class="">
+	<div class="container">
+		<div class="row">
+			<h1 class="big_title">Música</h1>
+			<hr class="left">
+
 			<% @musics.each_with_index do |music, i| %>
 				<div class="col-md-4 col-sm-6">
 			<div id="cancion">
@@ -13,5 +27,28 @@
 			</div>
 				</div>
 			<% end %>
+ 
+
+		</div>
 	</div>
 </div>
+
+
+<div id="section" class="gris">
+	<div class="container">
+		<div class="row">
+			<h1 class="big_title_der">Video</h1>
+			<hr class="right">
+
+			<% @videos.each_with_index do |video, i| %>
+				<div class="col-md-6 col-sm-6">
+			<div id="cancion">
+				<%= simple_format(video.link, {}, sanitize: false) %>
+			</div>
+				</div>
+			<% end %> 
+
+		</div>
+	</div>
+</div>
+

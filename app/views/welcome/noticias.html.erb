@@ -1,22 +1,38 @@
+<div class="hero">
+	<div class="container">
+	<div class="row">
+		<div class="col-md-6 col-sm-6">
+			<div id="banner_1">
+				<h1 class="subtitle white">Entérate Antes</h1>
+				<h2 class="title white">Lo mejor de Mike Bonza</h2>
+			</div>
+		</div>
+	</div>
+	</div>
+</div>
+<div id="pinta">
+</div>
+
+
 <div id="section">
 	<div class="container">
-		<h1>Noticas</h1>
-		<hr>
+			<h1 class="big_title">Noticias</h1>
+			<hr class="left">
 
 		
 			<% @news.each_with_index do |news, i| %>
 				<div class="col-md-4">
-			<%= link_to "#", data: {toggle: "modal", target: "#modal#{i}"} do %>
 			<div id="noticia">
 				<div class="image">
 					<%= image_tag news.foto1 %>
 				</div>
 				<h2><%=news.title %></h2>
-				<br><br>
 				<h4><%=news.created_at.to_date %></h4>
-				<p><%= news.content.truncate(150)%></p>
+				<br>
+				<p><%= news.content.truncate(150)%></p> <br><br>
+
+				<%= link_to "Seguir Leyendo", "#", data: {toggle: "modal", target: "#modal#{i}"}, class: "butra" %>
 			</div>
-			<% end %>
 
 			<div id="modli">
 				<!-- Modal -->
@@ -27,8 +43,10 @@
 								<button type="button" class="close" data-dismiss="modal">&times;</button>
 							</div>
 							<div class="modal-body">
-								<h1 class="izquierdo"><%= news.title %></h1><br>
-								<h2><%=news.created_at.to_date %></h2>
+								<h1 class="big_title"><%= news.title %></h1>
+								<hr class="left">
+								<p><%=news.created_at.to_date %></p>
+
 								<br>
 								<div id="boby">
 									<!-- body -->
@@ -41,7 +59,7 @@
 									<h4 class="shadow"><%=news.content.first %></h4>
 									<p><%=news.content %></p>
 									<br>
-									<a class= "button button_primary" href="<%= news.link %>">Más información</a>
+									<a class= "button button_secondary" href="<%= news.link %>">Más información</a>
 									<br>
 								</div>
 							</div>

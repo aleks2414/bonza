@@ -1,177 +1,55 @@
-<div class="container center">
-	<h4 class="shadow">L</h4>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, magni? Molestiae at quia vitae eius tenetur saepe dolor dolorum quod perferendis eum, magnam explicabo reiciendis ex totam amet, illum, consequuntur.</p>
-</div>
-
-
-<div id="hex">
+<div class="hero">
 	<div class="container">
-		<div class="row">
-
-			
-			<%= link_to musica_path do %>
-			<div class="col-sm-6 col-xs-6">
-				<div id="hexi" class="hexi-1">
-				<h2>Música</h2>
+	<div class="row">
+		<div class="col-md-6">
+			<div id="banner_1">
+				<h1 class="subtitle white">La joven promesa</h1>
+				<h2 class="title white">Del Big Band en México</h2>
 			</div>
-			</div>
-			<% end %>
-
-			<div class="col-sm-2 hidden-xs">
-				<div id="hexi" class="hexi-2">
-				<h3></h3>
-			</div>
-			</div>
-
-			<%= link_to videos_path do %>
-			<div class="col-sm-4 col-xs-6">
-				<div id="hexi" class="hexi-3">
-				<h2>Videos</h2>
-			</div>
-			</div>
-			<% end %>
-
 		</div>
-
-		<div class="row">
-
-			<%= link_to biografia_path do %>
-			<div class="col-sm-5 col-sm-offset-5 col-xs-6">
-				<div id="hexi" class="hexi-12">
-				<h2>Biografía</h2>
-			</div>
-			</div>
-			<% end %>
-
-
-			<%= link_to galeria_path do %>
-			<div class="visible-xs col-xs-6">
-				<div id="hexi" class="hexi-31">
-				<h2>Galería</h2>
-			</div>
-			</div>
-			<% end %>
-
-			<div class="col-sm-2 hidden-xs">
-				<div id="hexi" class="hexi-12">
-				<h3></h3>
-			</div>
-			</div>
-
-		</div>
-
-		<div class="row">
-
-			<%= link_to noticias_path do %>			
-			<div class="col-sm-3 col-xs-6">
-				<div id="hexi" class="hexi-21">
-				<h2>Noticias</h2>
-			</div>
-			</div>
-			<% end %>
-
-			<%= link_to new_contact_path do %>
-			<div class="col-sm-5 col-xs-6">
-				<div id="hexi" class="hexi-2">
-				<h2>Contrataciones</h2>
-			</div>
-			</div>
-			<% end %>
-
-			<%= link_to galeria_path do %>
-			<div class="col-sm-4 col-xs-6 hidden-xs">
-				<div id="hexi" class="hexi-31">
-				<h2>Galería</h2>
-			</div>
-			</div>
-			<% end %>
-
-		</div>
-
-
+	</div>
 	</div>
 </div>
+<div id="pinta">
+</div>
 
-<br><br><br><br>
-<div id="section">
+
+<div id="section" class="gris">
 	<div class="container">
-		
-		<h1>Próximas presentaciones</h1>
-		<hr>
-	
+			<h1 class="big_title">Mike's Bonza Tour</h1>
+			<hr class="left">
+
 	<% @tours.each_with_index do |tour, i| %>
-		<div class="col-md-10 col-md-offset-1">
-			<%= link_to "#", data: {toggle: "modal", target: "#modal#{i}"} do %>
-			<div id="fanzone">
-				<div class="row">
-				<div class="col-md-8">
-						<h2><%= tour.title %></h2> <br>
-						<h6><%= tour.lugar %> - <%= tour.fecha %></h6>
-						<p><%= tour.content.truncate(50)%></p>
-				</div>
-				<div class="col-md-4">
-						<a class= "button button_primary" href="<%= tour.link %>">INFORMACIÓN</a>
-				</div>
-			</div>
-			</div>
-			<% end %>
-
-
-
-<div id="modli">
-				<!-- Modal -->
-				<div class="modal fade" id="modal<%=i%>" role="dialog">
-					<div class="modal-dialog modal-md">
-						<div class="modal-content">
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal">&times;</button>
-							</div>
-							<div class="modal-body">
-								<h1 class="izquierdo"><%= tour.title %></h1>
-								<hr>
-								<h6><%= tour.lugar %> - <%= tour.fecha %></h6>
-								<br>
-								<div id="boby">
-									<!-- body -->
-									<br>
-									<h4 class="shadow"><%=tour.content.first %></h4>
-									<p><%=tour.content %></p> <br>
-									<div class="owl-carousel">
-										<div><%= image_tag tour.foto7 if tour.foto7 %></div>
-										<div><%= image_tag tour.foto8 if tour.foto8 %></div>
-										<div><%= image_tag tour.foto9 if tour.foto9 %></div>
-									</div>
-									<br>
-									<a class= "button button_primary" href="<%= tour.link %>">Más información</a>
-									<br>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!--  -->
-
-		</div>
-		
-	<% end %>
-	<%= link_to "Todas las fechas del tour", bonza_tour_path, class: "button button_primary" %>
-	
+<div class="row">
+<div class="col-md-8">
+<div id="touri">
+	<h3 class="bold"><%=tour.fecha %></h3> <br>
+	<h3><%=tour.lugar %></h3>
+	<%= link_to "Más información", tour.link, class: "button button_secondary" %>
+</div>
+</div>
+</div>
+	<% end %> <br><br>
+  <%= link_to "TODO EL TOUR DE MIKE BONZA", bonza_tour_path, class: "butra" %>  
 	</div>
 </div>
 
 
 
+<div id="section" class="">
+	<div class="container">
+		<div class="row">
+			<h1 class="big_title_der">Galería</h1>
+			<hr class="right">
 
+    <div id="insta">
 
+<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<div class="elfsight-app-1b74fc62-66f2-4b03-8f92-0025e7e7336c"></div>
+    </div>
 
+  <%= link_to "Sígueme en Instagram", "https://www.instagram.com/themikebonza", class: "butra" %>  
 
-
-
-<script>
-    $(".owl-carousel").owlCarousel(
-  {
-    items:1,
-    autoHeight:true,
-  });
-</script>
+		</div>
+	</div>
+</div>

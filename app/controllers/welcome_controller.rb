@@ -21,6 +21,7 @@ class WelcomeController < ApplicationController
 
   def musica
   	@musics = Music.all.order('id DESC')
+    @videos = Video.all.order('id DESC')
   end
 
   def tour

@@ -6,83 +6,142 @@
 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-	<script src="https://use.fontawesome.com/7dee056668.js"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.1.1/js/all.js" integrity="sha384-BtvRZcyfv4r0x/phJt9Y9HhnN5ur1Z+kZbKVgzVBAlQZX4jvAuImlIz+bG7TS00a" crossorigin="anonymous"></script>
 </head>
 
 
 <body>
-<% if alert %>
+	<% if alert %>
 	<p class="alert"><%= alert %></p>
-<% elsif notice %>
+	<% elsif notice %>
 	<p class="notice"><%= notice %></p>
-<% end %>
+	<% end %>
 
-<div id="banner">
-	<%= image_tag "banner.svg" %>
-</div>
 
-	<header>
-		<div id= "navigator" class="cd-logo">
-			<ul>
-				<li><a href="https://www.instagram.com/themikebonza/"><%= image_tag ("instagram.svg")%></a></li>
-				<li><a href="https://www.facebook.com/mike.bonza.3"><%= image_tag ("facebook.svg")%></a></li>
-				<li><a href="https://twitter.com/bonza_mike"><%= image_tag ("twitter.svg")%></a></li>	
-				<li><a href="https://www.youtube.com/channel/UCNUQ3Q8NTFS1V7osWrS-p0w"><%= image_tag ("youtube.svg")%></a></li>	
-			</ul>
-		</div>
-	</header>
+	<div id="navin">
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<%= link_to root_path do %>
+					<%= image_tag "mike_bonza_logo.svg" %>
+					<% end %>
+				</div>
 
-	<nav>
-		<ul class="cd-primary-nav">
-			<li><a href="<%= noticias_path %>">Noticias</a></li>
-			<li><a href="<%= bonza_tour_path %>">Tour</a></li>
-			<li><a href="<%= fanzone_path %>">Fanzone</a></li>
-			<li><a href="<%= biografia_path %>">Biografía</a></li>
-			<li><a href="<%= bonza_videos_path %>">Videos</a></li>
-			<li><a href="<%= musica_path %>">Música</a></li>
-			<li><a href="<%= musica_path %>">Galería</a></li>
-			<li><a href="<%= new_contact_path %>">Contrataciones</a></li>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li class="<%= 'activo' if current_page?(bonza_tour_path) %>"><a href="<%=bonza_tour_path %>">Tour</a></li>
+						<li class="<%= 'activo' if current_page?(musica_video_path) %>"><a href="<%=musica_video_path %>">Música & Video</a></li>
+						<li class="<%= 'activo' if current_page?(noticias_path) %>"><a href="<%=noticias_path %>">Noticias</a></li>
+						<li class="<%= 'activo' if current_page?(biografia_path) %>"><a href="<%=biografia_path %>">Biografía</a></li>
+						<li class="<%= 'activo' if current_page?(new_contact_path) %>"><a href="<%=new_contact_path %>">Contacto</a></li>
 
 						<% if user_signed_in? %>
-
-						<li><a href="<%=new_news_path %>">Dashboard</a></li>
+						<li>
+							<%= link_to 'Dashboard', news_index_path %>
+						</li>
+						<% end %>
+						<% if user_signed_in? %>
 						<li class="mini"> <a href="<%= destroy_user_session_path %>" data-method='delete'>
 							Cerrar Sesión
 						</a></li>
 						<% else %>
 						<li class="mini"><a href="<%= new_user_session_path %>"> Iniciar Sesión </a></li>
 						<% end %>
-		</ul>
-	</nav>
+
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+		</nav>
+	</div>
+
+	
+	<!-- your content here -->
+	<div id="content">
+		<%= yield %>
+	</div>
+
+	
+		<div id="contact">
+			<div class="container">
+				<div class="row">
+				<h1 class="white title">CONOCE MÁS DE MÍ</h1>
+				<h2 class="white subtitle">MÁS INFORMACIÓN, CONTRATACIONES, PREGUNTAS...</h2>
+
+				<%= link_to "Contáctame", new_contact_path, class: "button button_secondary" %>
+			</div>
+		</div>
+	</div>
 
 
-	<main class="cd-content">
-<br><br>
-<%=link_to root_path do %>
-<div class="center"><%= image_tag "mike_bonza_logo.svg" %></div>
-<% end %>
-<br><br>
-		<!-- your content here -->
-<div id="content">
-	<%= yield %>
-</div>
+
+	<div id="footers">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<ul>
+						<li>
+							<%= link_to "https://www.instagram.com/themikebonza", :target => "_blank" do %>
+							<span class="fab fa-instagram"></span>
+							<% end %>
+						</li>
+
+						<li>
+							<%= link_to "https://www.facebook.com/mike.bonza.3", :target => "_blank" do %>
+							<span class="fab fa-facebook"></span>
+							<% end %>
+						</li>
+
+						<li>
+							<%= link_to "https://twitter.com/bonza_mike", :target => "_blank" do %>
+							<span class="fab fa-twitter"></span>
+							<% end %>
+						</li>
+
+						<li>
+							<%= link_to "https://www.youtube.com/channel/UCNUQ3Q8NTFS1V7osWrS-p0w", :target => "_blank" do %>
+							<span class="fab fa-youtube"></span>
+							<% end %>
+						</li>
+
+						<li>
+							<%= link_to root_path, :target => "_blank" do %>
+							<span class="fab fa-spotify"></span>
+							<% end %>
+						</li>
+					</ul> <br><br>
+				</div>
+
+				<div class="col-md-4 col-md-offset-2">
+					<h3 class="white bold">SUSCRÍBETE PARA ENTERARTE <br>
+					DE MIKE BONZA ANTES QUE NADIE</h3> <br>
+					<div id="foca">
+						<%= form_for @contact do |f| %>
+								<%= f.text_field :email, required:true %><%= f.submit "Suscríbeme", class:"buttona button_terciary"%>
+
+								<%= f.text_field :donde, :value => "#{params[:controller]} - #{request.original_url}", class: "hidden" %>
+									<%= f.text_field :nickname, hint: 'Esto se queda en blanco', class: "hidden" %>
+									
+						<% end %>
+					</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+	<div id="copy">
+		<p class="center">Copyright © 2018. All Rights Reserved.</p>
+	</div>
 
 
-<div id="footer">
-  <h4>Contact: mike@mikebonza.com - Copyright © 2018. All Rights Reserved.</h4>
-</div>
-
-
-	</main> <!-- cd-content -->
-
-	<div class="cd-overlay-nav">
-		<span></span>
-	</div> <!-- cd-overlay-nav -->
-
-	<div class="cd-overlay-content">
-		<span></span>
-	</div> <!-- cd-overlay-content -->
-
-	<a href="#0" class="cd-nav-trigger">Menu<span class="cd-icon"></span></a>
 </body>
 </html>

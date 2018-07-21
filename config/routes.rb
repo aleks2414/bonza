@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get '/fanzone' => 'welcome#fanzone'
   get '/biografia' => 'welcome#biografia'
   get '/bonza_videos' => 'welcome#videos'
-  get '/musica' => 'welcome#musica'
+  get '/musica_video' => 'welcome#musica'
   get '/bonza_tour' => 'welcome#tour'
   get '/galeria' => 'welcome#galeria'
 
