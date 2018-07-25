@@ -127,6 +127,27 @@ z-index: 10;
 }
 
 
+.button_white {
+  color: white;
+  background-color: transparent;
+  font-size: 15px;
+  border-color: black;
+  text-transform: uppercase;
+  border: solid 1.7px white;
+  &:hover {
+    color: $secondary;
+    background-color: white;
+    border: solid 1.7px white;
+  }
+
+  &:hover > a {
+  color: $secondary;
+  text-decoration: none;
+  background-color: white;
+  }
+}
+
+
 .button_terciary {
   color: $primary;
   background-color: transparent;
@@ -426,6 +447,13 @@ hr.right {
   background-color: $light_grey !important;
 }
 
+.black {
+  background-color: $secondary !important;
+  h1, h3 {
+    color: white !important;
+  }
+}
+
 
 
 .butra {
@@ -439,6 +467,22 @@ hr.right {
   &:hover {
     color: $secondary;
     border-color: $secondary;
+  }
+
+}
+
+
+.butra_white {
+  color: $primary;
+  text-transform: uppercase;
+  padding: 10px 0;
+  border-bottom: solid 2px $primary;
+  font-size: .9em;
+  font-family:"Helvetica-Bold";
+
+  &:hover {
+    color: white;
+    border-color: white;
   }
 
 }
