@@ -272,7 +272,7 @@ img {
   height: 100vh;
   h1 {
     margin-top: 15%;
-    font-size: 35px;
+    font-size: 40px;
   }
 }
 
@@ -373,7 +373,7 @@ select {
       margin-right: 15px;
       a {
         color: white;
-        font-size: 1.4em;
+        font-size: 1.6em;
     &:hover {
   color: $grey;
   }
@@ -392,24 +392,24 @@ select {
 }
 
 .title {
-  font-size: 2.3em;
+  font-size: 2.7em;
   font-family:"Helvetica-Bold";
 }
 
 .subtitle {
-  font-size: 1.2em;
+  font-size: 1.5em;
   font-family:"Helvetica-Bold";
 }
 
 .big_title {
-  font-size: 2em;
+  font-size: 2.4em;
   font-family:"Helvetica-Bold";
   color: $secondary;
   text-transform: uppercase;
 }
 
 .big_title_der {
-  font-size: 2em;
+  font-size: 2.4em;
   font-family:"Helvetica-Bold";
   color: $secondary;
   text-transform: uppercase;
@@ -461,7 +461,7 @@ hr.right {
   text-transform: uppercase;
   padding: 10px 0;
   border-bottom: solid 2px $primary;
-  font-size: .9em;
+  font-size: 1.2em;
   font-family:"Helvetica-Bold";
 
   &:hover {
@@ -477,7 +477,7 @@ hr.right {
   text-transform: uppercase;
   padding: 10px 0;
   border-bottom: solid 2px $primary;
-  font-size: .9em;
+  font-size: 1.2em;
   font-family:"Helvetica-Bold";
 
   &:hover {
@@ -523,12 +523,12 @@ hr.right {
 
   h2 {
     margin-top: 10px;
-    font-size: 1em;
+    font-size: 1.1em;
     font-family:"Helvetica-Bold";
     text-transform: uppercase;
   }
   p {
-    font-size: 1em;
+    font-size: 1.1em;
   }
   .image {
   height:200px;
@@ -541,6 +541,10 @@ hr.right {
   }
   }
 
+}
+
+p {
+  font-size: 1.2
 }
 
 
