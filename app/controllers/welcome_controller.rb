@@ -4,7 +4,7 @@ class WelcomeController < ApplicationController
   end
 
   def noticias
-  	@news = News.all.order('id DESC')
+  	@news = News.all.order('id DESC').where(:disponible => true)
   end
 
   def fanzone
@@ -20,12 +20,12 @@ class WelcomeController < ApplicationController
   end
 
   def musica
-  	@musics = Music.all.order('id DESC')
-    @videos = Video.all.order('id DESC')
+  	@musics = Music.all.order('id DESC').where(:disponible => true)
+    @videos = Video.all.order('id DESC').where(:disponible => true)
   end
 
   def tour
-  	@tours = Tour.all.order('id DESC')
+  	@tours = Tour.all.order('id DESC').where(:disponible => true)
   end
 
 
