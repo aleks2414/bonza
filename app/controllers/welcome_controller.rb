@@ -25,7 +25,7 @@ class WelcomeController < ApplicationController
   end
 
   def tour
-  	@tours = Tour.all.order('id DESC').where(:disponible => true)
+  	@tours = Tour.all.order('fecha_inicio DESC').where(:disponible => true)
   end
 
 
