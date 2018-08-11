@@ -41,6 +41,27 @@ $light_grey: #f3f3f3;
 $grey: #4A4A4A;
 
 
+#idiom {
+  padding: 5px 0;
+  background-color: white;
+
+  h3 {
+    color: $secondary;
+    font-weight: 900;
+  }
+
+  ul {
+    li {
+      display: inline;
+      float: right;
+      margin-left: 15px;
+    }
+  }
+  .ac {
+    color: $primary !important;
+  }
+}
+
 
 body {
 -webkit-font-smoothing: antialiased;
