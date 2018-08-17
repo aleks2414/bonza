@@ -42,11 +42,12 @@ $grey: #4A4A4A;
 
 
 #idiom {
-  padding: 5px 0;
-  background-color: white;
+  border-top: solid 1px #828282;
+  padding: 7px 0;
+  background-color: $secondary;
 
   h3 {
-    color: $secondary;
+    color: white;
     font-weight: 900;
   }
 
@@ -242,7 +243,7 @@ img {
 /*styles*/
 
 .center {
-	text-align: center;
+	text-align: center !important;
 }
 
 .white {
@@ -683,4 +684,21 @@ background-size: cover;
 .hero {
 background-attachment: unset;
 }
+}
+
+
+@media (max-width: 800px)
+{
+
+.title {
+  font-size: 2.7em;
+  font-family:"Helvetica-Bold";
+}
+
+.subtitle {
+  font-size: 1.5em;
+  font-family:"Helvetica-Bold";
+}
+
+
 }
