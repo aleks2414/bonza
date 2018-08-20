@@ -32,7 +32,7 @@
         <td><%= news.disponible %></td>
         <td><%= news.title %></td>
         <td><%= news.content.truncate(20) %></td>
-        <td><%= news.try(:fecha).strftime("%d-%m-%Y")%></td>
+        <td><%= news.try(:fecha)%></td>
         <td><%= news.link %></td>
         <td><%= news.foto1 %></td>
         <td><%= news.foto2 %></td>
