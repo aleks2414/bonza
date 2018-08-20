@@ -4,7 +4,7 @@ class WelcomeController < ApplicationController
   end
 
   def noticias
-  	@news = News.all.order('id DESC').where(:disponible => true)
+  	@news = News.all.order('fecha DESC').where(:disponible => true)
   end
 
   def fanzone

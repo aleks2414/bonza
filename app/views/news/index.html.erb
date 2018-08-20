@@ -17,6 +17,7 @@
       <th>disponible</th>
       <th>Title</th>
       <th>Content</th>
+      <th>Fecha</th>
       <th>Link</th>
       <th>Foto1</th>
       <th>Foto2</th>
@@ -31,6 +32,7 @@
         <td><%= news.disponible %></td>
         <td><%= news.title %></td>
         <td><%= news.content.truncate(20) %></td>
+        <td><%= news.fecha.strftime("%d-%m-%Y")%></td>
         <td><%= news.link %></td>
         <td><%= news.foto1 %></td>
         <td><%= news.foto2 %></td>

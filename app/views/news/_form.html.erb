@@ -27,6 +27,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :fecha %>
+    <%= form.date_select :fecha, id: :news_fecha %>
+  </div>
+
+  <div class="field">
     <%= form.label :link %>
     <%= form.text_field :link, id: :news_link %>
   </div>
