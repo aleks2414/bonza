@@ -30,6 +30,40 @@
 <div id="pinta">
 </div>
 
+		<div id="contact">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+				<h1 class="white title">ZONA FAN</h1>
+				<h6 class="white subtitle">Suscríbete para tener noticias exclusivas</h6>
+				</div>
+
+					<div id="foca2">
+						<%= form_for @contact do |f| %>
+						<div class="col-md-2">
+							<br><br>
+								<%= f.text_field :email, required:true, placeholder: "Email" %>
+
+								<%= f.text_field :donde, :value => "#{params[:controller]} - #{request.original_url}", class: "hidden" %>
+									<%= f.text_field :nickname, hint: 'Esto se queda en blanco', class: "hidden" %>
+						</div>
+
+						<div class="col-md-2">
+							<br><br>
+							<%= f.text_field :phone, placeholder: "Teléfono" %>
+						</div>
+									
+						<div class="col-md-2">
+							<br><br>
+							<%= f.submit "Suscríbeme", class:"buttona button_secondary"%>
+						</div>			
+						<% end %>
+					
+
+					</div>
+			</div>
+		</div>
+	</div>
 
 <div id="section" class="black">
 	<div class="container">
