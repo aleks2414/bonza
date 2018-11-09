@@ -49,7 +49,7 @@
 								<div id="boby">
 									<!-- body -->
 									<h4 class="shadow"><%=news.content.first %></h4>
-									<p><%=news.content %></p>
+									<p><%= simple_format news.content %></p>
 									<br>
 									<a class= "button button_secondary" href="<%= news.link %>">Más información</a>
 									<br>
